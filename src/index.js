@@ -8,11 +8,14 @@ import { createStore } from "redux";
 import { Provider } from "react-redux";
 import { rootReducer } from "./store/reducers";
 
-import HomePage from "./components/Home/HomePage";
-import Users from "./components/Users/Users";
+import HomePage from "./pages/Home/HomePage";
+import Users from "./pages/Users/Users";
+import PageArticle from "./pages/PageArticle/PageArticle"
+import PageUser from "./pages/PageUser/PageUser"
 
 export const ACTION_DATA_POST = "ACTION_DATA_POSTER";
 export const ACTION_DATA_USER = "ACTION_DATA_USER";
+export const ACTION_DATA_COMMENT = "ACTION_DATA_COMMENT";
 
 const store = createStore(
   rootReducer,
@@ -26,7 +29,9 @@ ReactDOM.render(
         <App>
           <Switch>
             <Route exact path="/" component={HomePage} />
-            <Route path="/Users" component={Users} />
+            <Route path="/users" component={Users} />
+            <Route path="/articles/:articleId" component={PageArticle} />
+            <Route path="/user/:userId" component={PageUser} />
           </Switch>
         </App>
       </BrowserRouter>

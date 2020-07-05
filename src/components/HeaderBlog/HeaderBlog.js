@@ -1,5 +1,7 @@
 import React from 'react'
 import './HeaderBlog.css'
+import { NavLink  } from 'react-router-dom';
+
 
 function HeaderBlog(){
     
@@ -7,8 +9,8 @@ function HeaderBlog(){
       <header className="header-blog">
           <nav className="header-blog__nav">
             <ul className="header-blog__listing">
-                <li><a href="/">Home</a> </li>
-                <li><a href="/Users">Users</a></li>
+                <li><NavLink className="header-blog__btn" exact={true} activeClassName="is-active" to="/">Home</NavLink > </li>
+                <li><NavLink className="header-blog__btn" activeClassName="is-active" to="/Users">Users</NavLink ></li>
             </ul>
           </nav>
       </header>

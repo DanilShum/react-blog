@@ -1,0 +1,10 @@
+.users__profile {
+    border-radius: 15px;
+    background: #ccc;
+    width: 250px;
+    height: 250px;
+    margin: 15px;
+}
+.users__profile-name {
+    text-align: center;
+}

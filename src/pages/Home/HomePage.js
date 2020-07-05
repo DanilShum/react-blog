@@ -1,15 +1,16 @@
 import React from "react";
-import PostBlog from "../PostBlog/PostBlog";
+import PostBlog from "../../components/PostBlog/PostBlog";
 import "./HomePage.css"
-import { mapStateToProps, mapDispatchToProps } from "../mapToProps";
+import { mapStateToProps, mapDispatchToProps } from "../../components/mapToProps";
 import { connect } from "react-redux";
+
 function HomePage(props) {
   const { dataPost, updatePost} = props;
 
   return (
     <section className="home-page">
       {dataPost.map((item) => (
-        <PostBlog {...item} key={item.id} />
+        <PostBlog {...item} key={item.id} setUserName={true}/>
       ))}
     </section>
   );

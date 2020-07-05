@@ -1,10 +1,39 @@
+.header-blog {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: #fff;
+}
 .header-blog__listing {
     display: flex;
     justify-content: center;
     list-style: none;
-    margin: 5px;
-    padding: 5px;
+    padding: 15px 0;
 }
 .header-blog__listing li{
-    margin: 5px;
+    margin: 10px 0;
+    list-style: none;
+    
 }
+
+.header-blog__btn{
+    margin: 10px;
+    padding: 15px 35px;
+    text-decoration: none;
+    border-radius: 5px;
+    background: #ccc;
+    color: blue;
+    font-weight: 500;
+    transition: background ease-in-out .1s;
+}
+.header-blog__btn:hover{
+    background: rgb(153, 153, 153);
+}
+.is-active {
+    background: rgb(221, 107, 107);
+  }
+
+
+
+
+  

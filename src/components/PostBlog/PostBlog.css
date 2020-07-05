@@ -1,6 +1,60 @@
 .post-blog {
-    width: 20%;
-    min-width: 20%;
-    margin: 10px;
+  position: relative;
+  width: 20%;
+  margin: 10px;
+  border-radius: 5px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+    min-width: 460px;
+    padding: 16px;
+    background-color: white
 }
-    
+
+.post-blog:hover {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.post-blog__title {
+  overflow: hidden;
+    font-size: 20px;
+    margin-bottom: 8px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.post-blog__title::first-letter,
+.post-blog__text::first-letter {
+  text-transform: uppercase;
+}
+
+.post-blog__content,
+.post-blog__text {
+  overflow: hidden;
+  height: 200px;
+  max-height: 200px;
+  text-decoration: none;
+  color: black;
+  text-overflow: ellipsis;
+  padding-bottom: 16px;
+  max-height: 100px;
+    text-decoration: none;
+    color: black;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.post-blog__author {
+    text-decoration: none;
+    color: lightcoral;
+    padding-top: 8px;
+}
+
+.post-blog__author:hover {
+  text-decoration: underline;
+}

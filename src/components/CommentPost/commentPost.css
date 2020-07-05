@@ -1,0 +1,43 @@
+.user-comment {
+  display: flex;
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+
+.user-comment__avatar {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-image: linear-gradient(to bottom, lightgreen, green);
+  color: white;
+  font-size: 20px;
+  margin-right: 24px;
+}
+.user-comment__content {
+    width: 90%;
+
+}
+.user-comment__content-wrapper {
+    display: flex;
+    margin: 10px 0;
+}
+.user-comment__content-wrapper strong {
+    margin-right: 10px;
+}
+.user-comment__content-wrapper a {
+    margin-right: 10px;
+}
+.user-comment__delete {
+    opacity: 0;
+    visibility: hidden;
+}
+.user-comment:hover .user-comment__delete {
+    opacity: 1;
+    visibility: visible;
+    transition: 0.5s ease-in-out;
+}
