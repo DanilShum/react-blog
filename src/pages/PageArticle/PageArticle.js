@@ -14,6 +14,11 @@ import AddIcon from "@material-ui/icons/Add";
 import HighlightOff from "@material-ui/icons/HighlightOff";
 import "./pageArticle.css";
 
+
+function deleteElement(updateArr, arr, element) {
+  updateArr(arr.filter((post) => post.id !== element));
+}
+
 function PageArticle(props) {
   const articleId = Number(props.match.params.articleId);
   const {
@@ -56,9 +61,7 @@ function PageArticle(props) {
     setVisible(true);
   }
 
-  function deletePost() {
-    updatePost(dataPost.filter((post) => post.id !== article.id));
-  }
+  
 
   function fetchComments() {
     axios
@@ -162,7 +165,7 @@ function PageArticle(props) {
           <p>If you want to delete this article, click this button</p>
           <Fab
             size="small"
-            onClick={deletePost}
+            onClick={() => deleteElement(updatePost, dataPost, article.id)}
             className="page-article__btn-delete"
           >
             <HighlightOff color="secondary" />
@@ -182,12 +185,18 @@ function PageArticle(props) {
       <section className="page-article__comment">
         {dataComment &&
           dataComment.map((comment) => (
-            <CommentPost {...comment} key={comment.id} />
+            <CommentPost
+              {...comment}
+              key={comment.id}
+              deleteElement={deleteElement}
+            />
           ))}
       </section>
     </section>
   ) : (
-    404
+    <p className="page-article__notFound">
+      No page exists. <span>Err. 404</span>
+    </p>
   );
 }
 export default connect(mapStateToProps, mapDispatchToProps)(PageArticle);

@@ -39,7 +39,6 @@ function App(props) {
       });
   }
 
- 
   useEffect(() => {
     fetchPosts();
     fetchAuthor();
@@ -50,6 +49,8 @@ function App(props) {
     <div className="App">
       <HeaderBlog />
       {dataPost && dataUser  && children}
+      
+   
     </div>
   );
 }

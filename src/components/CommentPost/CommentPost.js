@@ -12,10 +12,6 @@ import HighlightOff from "@material-ui/icons/HighlightOff";
 function CommentPost(props) {
   const { dataUser, updateUsers, dataComment, updateComments } = props;
 
-  function deleteCmment() {
-    updateComments(dataComment.filter((comment) => comment.id !== props.id));
-  }
-
   let nameAuthorComment = Math.floor(Math.random() * 10);
 
   return (
@@ -27,18 +23,25 @@ function CommentPost(props) {
       </div>
       <div className="user-comment__content">
         <p>{props.body}</p>
-        {/* <Link to={`/user/${nameAuthorComment}`}> */}
+
         <div className="user-comment__content-wrapper">
-          <strong>
-            <em>{dataUser[nameAuthorComment].name}</em>
-          </strong>
-          {/* </Link> */}
+          <Link to={`/user/${nameAuthorComment + 1}`}>
+            <strong>
+              <em>{dataUser[nameAuthorComment].name}</em>
+            </strong>
+          </Link>
           <a href={props.email}> {props.email}</a>
         </div>
       </div>
 
-      <Fab  size="small" className="user-comment__delete" onClick={deleteCmment}>
-        <HighlightOff color="secondary"/>  
+      <Fab
+        size="small"
+        className="user-comment__delete"
+        onClick={() =>
+          props.deleteElement(updateComments, dataComment, props.id)
+        }
+      >
+        <HighlightOff color="secondary" />
       </Fab>
     </div>
   );

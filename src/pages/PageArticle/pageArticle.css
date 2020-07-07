@@ -71,3 +71,16 @@
 .page-article__comment {
   margin-top: 40px;
 }
+.page-article__notFound {
+  text-align:  center;
+  padding: 35px 0;
+  color: rgb(76, 78, 78);
+  font-size: 28px;
+  font-style: italic;
+}
+.page-article__notFound span {
+ font-weight: 600;
+ font-style: normal;
+  color: rgb(84, 189, 189);
+  font-size: 32px;
+}
